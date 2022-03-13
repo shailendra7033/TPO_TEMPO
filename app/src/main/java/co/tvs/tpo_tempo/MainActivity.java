@@ -3,7 +3,6 @@ package co.tvs.tpo_tempo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.drawable.Animatable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -11,8 +10,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.lang.reflect.GenericArrayType;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
         bottom_animation = AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
 
         //hooks
-        image = findViewById(R.id.imageView2);
-        logo = findViewById(R.id.textView);
+        image = findViewById(R.id.image_main);
+        logo = findViewById(R.id.text_main);
 
         image.setAnimation(bottom_animation);
         logo.setAnimation(top_animation);
