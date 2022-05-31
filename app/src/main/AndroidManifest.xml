@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TPO_TEMPO">
         <activity
-            android:name=".RegisterForAllActivity"
+            android:name=".RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".ResetPasswordActivity"
@@ -22,11 +22,12 @@
             android:name=".InstituteLoginActivity"
             android:exported="false" />
         <activity
-            android:name=".BothLoginActivity"
+            android:name=".LoginActivity"
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

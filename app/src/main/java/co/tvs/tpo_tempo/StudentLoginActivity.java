@@ -3,7 +3,9 @@ package co.tvs.tpo_tempo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -25,10 +27,14 @@ public class StudentLoginActivity extends AppCompatActivity {
     FirebaseAuth loginAuth;
     String email,password;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
+
+        //set the orientation Portrait
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // hooks
         txtSignUp=findViewById(R.id.txt_sign_up_student);
@@ -41,7 +47,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         txtSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent= new Intent(StudentLoginActivity.this,RegisterForAllActivity.class);
+                Intent intent= new Intent(StudentLoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });  // end of on click l
@@ -87,6 +93,7 @@ public class StudentLoginActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Intent intent=new Intent(StudentLoginActivity.this,Home.class);
                     startActivity(intent);
+                    finish();
                 }else{
                     Toast.makeText(StudentLoginActivity.this, "Incorrect Credentials", Toast.LENGTH_SHORT).show();
                 }
@@ -106,6 +113,7 @@ public class StudentLoginActivity extends AppCompatActivity {
         if (currentUser != null) {
             Intent intent = new Intent(StudentLoginActivity.this, Home.class);
             startActivity(intent);
+            finish();
         }
     } // end of on start
 

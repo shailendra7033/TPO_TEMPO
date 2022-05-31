@@ -29,6 +29,7 @@ public class Home extends AppCompatActivity {
                 logOutAuth.signOut();
                 Intent intent=new Intent(Home.this,StudentLoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 

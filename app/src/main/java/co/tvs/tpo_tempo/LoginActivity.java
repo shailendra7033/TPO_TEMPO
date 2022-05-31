@@ -2,7 +2,9 @@ package co.tvs.tpo_tempo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,16 +12,20 @@ import android.widget.Button;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class BothLoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     // declaring variables
 
     Button btnStudentLogin,btnInstituteLogin;
     private FirebaseAuth loginAuth;
 
+    @SuppressLint("SourceLockedOrientationActivity")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_both_login);
+        setContentView(R.layout.activity_login);
+
+        //set the orientation Portrait
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         // connecting to xml file using id
         btnStudentLogin=findViewById(R.id.btn_student_login);
@@ -30,7 +36,7 @@ public class BothLoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // using intent to start new activity
-                Intent intent=new Intent(BothLoginActivity.this,StudentLoginActivity.class);
+                Intent intent=new Intent(LoginActivity.this,StudentLoginActivity.class);
                 startActivity(intent);
             }
         });   // end of on click listener on student login btn
@@ -39,7 +45,7 @@ public class BothLoginActivity extends AppCompatActivity {
         btnInstituteLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(BothLoginActivity.this,InstituteLoginActivity.class);
+                Intent intent=new Intent(LoginActivity.this,InstituteLoginActivity.class);
                 startActivity(intent);
             }
         }); //end of on click listener
@@ -54,7 +60,7 @@ public class BothLoginActivity extends AppCompatActivity {
         loginAuth=FirebaseAuth.getInstance();
         FirebaseUser currentUser = loginAuth.getCurrentUser();
         if (currentUser != null) {
-            Intent intent = new Intent(BothLoginActivity.this, Home.class);
+            Intent intent = new Intent(LoginActivity.this, Home.class);
             startActivity(intent);
         }
     } // end of on start
