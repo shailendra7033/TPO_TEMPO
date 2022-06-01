@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -20,8 +22,8 @@ public class RegisterActivity extends AppCompatActivity {
     // declaring variables
     Button btnRegisterUser;
     EditText txtEmailRegister,txtPasswordRegister;
+    TextView txtSignIn;
     FirebaseAuth regAuth;
-    String emailRegister,registerPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +34,32 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegisterUser=findViewById(R.id.btn_register_user);
         txtEmailRegister=findViewById(R.id.edit_register_email);
         txtPasswordRegister=findViewById(R.id.edit_register_password);
-//firebase instance
+        txtSignIn = findViewById(R.id.txt_sign_in_student);
+        //firebase instance
         regAuth=FirebaseAuth.getInstance();
+
+        // on click l on txt signin
+        txtSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });  // end of on click l
 
         // on click L on Register button
         btnRegisterUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String emailRegister = txtEmailRegister.getText().toString();
+                String registerPassword = txtPasswordRegister.getText().toString();
 
-                emailRegister=txtEmailRegister.getText().toString();
-                registerPassword=txtPasswordRegister.getText().toString();
-
+                if(TextUtils.isEmpty(emailRegister) || TextUtils.isEmpty (registerPassword)){
+                    Toast.makeText(RegisterActivity.this,"Empty credential.....!",Toast.LENGTH_SHORT).show();
+                }else {
                     registerUser(emailRegister,registerPassword);
-               
-
+                }
             } // overridden method
         });// end of on click l on register btn
 
@@ -56,13 +70,11 @@ public class RegisterActivity extends AppCompatActivity {
          @Override
          public void onComplete(@NonNull Task<AuthResult> task) {
              if(task.isSuccessful()){
-
                  Intent intent =new Intent(RegisterActivity.this,Home.class);
-
                  startActivity(intent);
                  finish();
              }else{
-                 Toast.makeText(RegisterActivity.this, "Unsuccessfull Try Again", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(RegisterActivity.this, "Unsuccessful Try Again", Toast.LENGTH_SHORT).show();
              }
          }
      });

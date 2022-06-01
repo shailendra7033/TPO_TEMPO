@@ -12,51 +12,42 @@
         android:id="@+id/imageView"
         android:layout_width="300dp"
         android:layout_height="150dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027"
         app:srcCompat="@drawable/student" />
 
     <Button
         android:id="@+id/btn_student_login"
-        android:layout_width="146dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#af98d2"
-        android:text="Student login"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        android:text="@string/student_login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="330dp"
         android:layout_height="180dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="100dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.568"
+        app:layout_constraintTop_toBottomOf="@+id/btn_student_login"
         app:srcCompat="@drawable/teams2" />
 
     <Button
         android:id="@+id/btn_institute_login"
-        android:layout_width="154dp"
-        android:layout_height="60dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:backgroundTint="#af98d2"
-        android:text="Institute Login"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/institute_login"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

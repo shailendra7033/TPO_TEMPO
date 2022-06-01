@@ -1,54 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".RegisterActivity">
 
+    <LinearLayout
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edit_register_email"
-        android:layout_width="311dp"
-        android:layout_height="80dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="135dp"
+            android:layout_marginTop="7dp"
+            android:src="@drawable/graduated" />
 
-    <EditText
-        android:id="@+id/edit_register_password"
-        android:layout_width="316dp"
-        android:layout_height="88dp"
-        android:ems="10"
-        android:hint="Password"
-        android:textSize="20sp"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        <TextView
+            android:id="@+id/txt_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_up"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btn_register_user"
-        android:layout_width="196dp"
-        android:layout_height="78dp"
-        android:text="Register"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717" />
+        <EditText
+            android:id="@+id/edit_register_email"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_box_round_corner"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="20dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="20dp"
+            android:textColor="@color/black"/>
 
+        <EditText
+            android:id="@+id/edit_register_password"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_box_round_corner"
+            android:drawableStart="@drawable/unlock"
+            android:drawablePadding="20dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:textColor="@color/black"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
 
+            <Button
+                android:id="@+id/btn_register_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#af98d2"
+                android:text="@string/sign_up"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="80dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_an_account"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="5dp"/>
+
+        <TextView
+            android:id="@+id/txt_sign_in_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sign_in"
+            android:textColor="@color/purple_200"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

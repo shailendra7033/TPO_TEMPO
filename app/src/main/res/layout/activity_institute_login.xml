@@ -7,128 +7,71 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/signin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="152dp"
-        android:gravity="center"
-        android:text="Sign in"
-        android:textColor="@color/black"
-        android:textSize="35dp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/employeeid"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/signin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#50ffffff"
-        android:drawableLeft="@drawable/user"
-        android:drawablePadding="20dp"
-        android:hint="Employee Id"
-        android:padding="20dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        tools:ignore="InvalidId" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/employeeid"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:background="#50ffffff"
-        android:drawableLeft="@drawable/unlock"
-        android:drawablePadding="20dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:padding="20dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/black" />
-
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/loginbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:backgroundTint="#af98d2"
-        android:text="LOGIN" />
-
-
-
-
-
-
     <LinearLayout
+        android:id="@+id/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/profile"
         android:layout_alignParentTop="true"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="130dp"
             android:layout_height="135dp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
             android:layout_marginTop="7dp"
             android:src="@drawable/profile" />
 
+        <TextView
+            android:id="@+id/txt_sign_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/user_id"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_box_round_corner"
+            android:drawableStart="@drawable/user"
+            android:drawablePadding="20dp"
+            android:hint="@string/user_id"
+            android:padding="20dp"
+            android:textColor="@color/black"/>
+
+        <EditText
+            android:id="@+id/edit_login_password"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/input_box_round_corner"
+            android:drawableStart="@drawable/unlock"
+            android:drawablePadding="20dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#af98d2"
+                android:text="@string/login"/>
+        </LinearLayout>
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/donthave"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="93dp"
-        android:layout_marginBottom="100dp"
-        android:gravity="center"
-        android:text="Don't have account?"
-        android:textColor="@color/black"
-        android:textSize="15dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/signUpInstitute"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="244dp"
-        android:layout_marginBottom="99dp"
-        android:text="Sign Up"
-        android:textColor="@color/purple_200"
-        android:textSize="18dp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/resetPasswordInstitute"
-        android:layout_width="87dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="397dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="286dp"
-        android:layout_toEndOf="@+id/loginbtn"
-        android:text="Forget Password" />
 
 
 </RelativeLayout>

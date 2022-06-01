@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +18,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class StudentLoginActivity extends AppCompatActivity {
     // declaring variables
@@ -25,7 +25,6 @@ public class StudentLoginActivity extends AppCompatActivity {
     EditText txtEmail,txtPassword;
     Button btnLogin,btnResetPassword;
     FirebaseAuth loginAuth;
-    String email,password;
 
     @SuppressLint("SourceLockedOrientationActivity")
     @Override
@@ -38,7 +37,7 @@ public class StudentLoginActivity extends AppCompatActivity {
 
         // hooks
         txtSignUp=findViewById(R.id.txt_sign_up_student);
-        txtEmail=findViewById(R.id.edit_login_username);
+        txtEmail=findViewById(R.id.user_id);
         txtPassword=findViewById(R.id.edit_login_password);
         btnLogin=findViewById(R.id.btn_login);
         btnResetPassword=findViewById(R.id.btn_reset_password);
@@ -49,6 +48,7 @@ public class StudentLoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent= new Intent(StudentLoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
+                finish();
             }
         });  // end of on click l
 
@@ -57,17 +57,13 @@ public class StudentLoginActivity extends AppCompatActivity {
     btnLogin.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            email=txtEmail.getText().toString();
-            password=txtPassword.getText().toString();
+            String txt_email = txtEmail.getText().toString();
+            String txt_password = txtPassword.getText().toString();
 
-            if(email==null ){
-                Toast.makeText(StudentLoginActivity.this, "Empty Email field", Toast.LENGTH_SHORT).show();
-            }else if(password==null){
-                Toast.makeText(StudentLoginActivity.this, "Empty Password field", Toast.LENGTH_SHORT).show();
-
-            }else{
-                loginUser(email,password);
-
+            if(TextUtils.isEmpty(txt_email) || TextUtils.isEmpty (txt_password)){
+                Toast.makeText(StudentLoginActivity.this,"Empty credential.....!",Toast.LENGTH_SHORT).show();
+            }else {
+                loginUser(txt_email, txt_password);
             }
         }
     }); // end of login listener
@@ -104,6 +100,8 @@ public class StudentLoginActivity extends AppCompatActivity {
 
 
 
+    /*
+        #---------Already applied below method in MainActivity.java  --------#
     @Override
     public void onStart() {
         super.onStart();
@@ -116,6 +114,7 @@ public class StudentLoginActivity extends AppCompatActivity {
             finish();
         }
     } // end of on start
+*/
 
 
 }// end of class

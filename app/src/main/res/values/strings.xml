@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">TPO_TEMPO</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="reset_password">Forget Password?</string>
+    <string name="login">LOGIN</string>
+    <string name="don_t_have_account">Don\'t have account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="user_id">User ID</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="we_will_send_reset_link_to_the_email_address_do_change_your_password_by_clicking_on_link">We will send reset link to the Email address, Do change Your password by clicking on link</string>
+    <string name="send_link">Send Link</string>
+    <string name="student_login">Student login</string>
+    <string name="institute_login">Institute Login</string>
 </resources>
