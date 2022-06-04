@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TPO_TEMPO">
         <activity
+            android:name=".PersonalDetails"
+            android:exported="false" />
+        <activity
+            android:name=".StudentDetails"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -27,7 +33,7 @@
         <activity
             android:name=".Home"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Home extends AppCompatActivity {
-    Button btnLogOut;
+    Button btnLogOut,btnProfile;
     FirebaseAuth logOutAuth;
 
     @Override
@@ -21,8 +21,11 @@ public class Home extends AppCompatActivity {
 
         // hooks
         btnLogOut=findViewById(R.id.btn_log_out);
+        btnProfile=findViewById(R.id.btn_profile);
 
         logOutAuth=FirebaseAuth.getInstance();
+
+
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,8 +34,18 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
+        }); // end of on click l of btnlogout
 
+        // on click l on Profile button
+    btnProfile.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent=new Intent(Home.this,StudentDetails.class);
+            startActivity(intent);
+//            finish();
 
-    }
-}
+        }
+    }); // end of on click l of profile btn
+
+    }  // end of on create method
+} // end of class
