@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TPO_TEMPO">
         <activity
+            android:name=".TPRsContact"
+            android:exported="false" />
+        <activity
             android:name=".FAQs"
             android:exported="false" />
         <activity
