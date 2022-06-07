@@ -119,15 +119,17 @@ public class Personal {
         this.state = state;
     }
 
-// Empty Constructors
+    // Empty Constructors
     public Personal() {
     }
 
 
     // small constructor for some inputs
-    public Personal(String name, String regNo, String dob) {
+    public Personal(String name, String regNo,String course,String branch, String dob) {
         this.name = name;
         this.regNo = regNo;
+        this.course = course;
+        this.branch = branch;
         this.dob = dob;
     }
 }

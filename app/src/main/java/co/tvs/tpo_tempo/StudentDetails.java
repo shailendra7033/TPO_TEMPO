@@ -14,16 +14,16 @@ public class StudentDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_details);
-    btn_personal=findViewById(R.id.btn_personalDetails);
-    btn_academics=findViewById(R.id.btn_academics);
-    btn_projects=findViewById(R.id.btn_Project);
-    btn_resume=findViewById(R.id.btn_resume);
+        btn_personal=findViewById(R.id.btn_personalDetails);
+        btn_academics=findViewById(R.id.btn_academics);
+        btn_projects=findViewById(R.id.btn_Project);
+        btn_resume=findViewById(R.id.btn_resume);
 
 
     btn_personal.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent=new Intent(StudentDetails.this,PersonalDetails.class);
+            Intent intent=new Intent(StudentDetails.this, PersonalDetailsActivity.class);
             startActivity(intent);
         }
     });

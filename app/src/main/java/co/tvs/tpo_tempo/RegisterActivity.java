@@ -16,6 +16,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Objects;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -65,12 +69,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     } // End on create
 
- public void registerUser(String emailRegister, String registerPassword) {
+    public void registerUser(String emailRegister, String registerPassword) {
      regAuth.createUserWithEmailAndPassword(emailRegister,registerPassword).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
          @Override
          public void onComplete(@NonNull Task<AuthResult> task) {
              if(task.isSuccessful()){
-                 Intent intent =new Intent(RegisterActivity.this,Home.class);
+                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                 String userId = Objects.requireNonNull(regAuth.getCurrentUser()).getUid();
+                 String email = regAuth.getCurrentUser().getEmail();
+                 Personal user = new Personal("NA", "NA", email, "NA", "NA", "NA", "NA", "NA", "NA", "NA", "NA");
+                 mDatabase.child("Users_Profile").child(userId).setValue(user);
+                 Intent intent = new Intent(RegisterActivity.this,Home.class);
                  startActivity(intent);
                  finish();
              }else{

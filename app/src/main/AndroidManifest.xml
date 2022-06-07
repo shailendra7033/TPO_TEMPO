@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TPO_TEMPO">
         <activity
-            android:name=".PersonalDetails"
+            android:name=".EditPersonalDetails"
+            android:exported="false" />
+        <activity
+            android:name=".PersonalDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".StudentDetails"
