@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Home extends AppCompatActivity {
-    Button btnLogOut,btnProfile;
+    Button btnLogOut,btnFaqs,btnTprs,btnProfile;
     FirebaseAuth logOutAuth;
 
     @Override
@@ -22,6 +22,8 @@ public class Home extends AppCompatActivity {
         // hooks
         btnLogOut=findViewById(R.id.btn_log_out);
         btnProfile=findViewById(R.id.btn_profile);
+        btnFaqs=findViewById(R.id.btn_faqs_home);
+        btnTprs=findViewById(R.id.btn_tpr_contact);
 
         logOutAuth=FirebaseAuth.getInstance();
 
@@ -34,7 +36,18 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }); // end of on click l of btnlogout
+        }); // end of on click l on logout
+
+
+        // on click l on Faqs
+        btnFaqs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Home.this,FAQs.class);
+                startActivity(intent);
+            }
+        });  // end of faqs button
+
 
         // on click l on Profile button
     btnProfile.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +56,15 @@ public class Home extends AppCompatActivity {
             Intent intent=new Intent(Home.this,StudentDetails.class);
             startActivity(intent);
 //            finish();
+
+        // on click tprs
+        btnTprs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(Home.this,TPRsContact.class);
+                startActivity(intent);
+            }
+        });
 
         }
     }); // end of on click l of profile btn

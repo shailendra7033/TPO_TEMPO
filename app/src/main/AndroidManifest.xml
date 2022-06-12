@@ -19,6 +19,12 @@
             android:name=".StudentDetails"
             android:exported="false" />
         <activity
+            android:name=".TPRsContact"
+            android:exported="false" />
+        <activity
+            android:name=".FAQs"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -36,7 +42,7 @@
         <activity
             android:name=".Home"
             android:exported="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar" />
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
