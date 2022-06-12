@@ -98,12 +98,9 @@ public class PersonalDetailsActivity extends AppCompatActivity {
         });
 
 
-        editPersonalDetailsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(PersonalDetailsActivity.this, EditPersonalDetails.class);
-                startActivity(intent);
-            }
+        editPersonalDetailsBtn.setOnClickListener(v -> {
+            Intent intent=new Intent(PersonalDetailsActivity.this, EditPersonalDetails.class);
+            startActivity(intent);
         });
 
     } // end of onCreate method

@@ -28,46 +28,32 @@ public class Home extends AppCompatActivity {
         logOutAuth=FirebaseAuth.getInstance();
 
 
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logOutAuth.signOut();
-                Intent intent=new Intent(Home.this,StudentLoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        btnLogOut.setOnClickListener(v -> {
+            logOutAuth.signOut();
+            Intent intent=new Intent(Home.this,StudentLoginActivity.class);
+            startActivity(intent);
+            finish();
         }); // end of on click l on logout
 
 
         // on click l on Faqs
-        btnFaqs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Home.this,FAQs.class);
-                startActivity(intent);
-            }
+        btnFaqs.setOnClickListener(v -> {
+            Intent intent=new Intent(Home.this,FAQs.class);
+            startActivity(intent);
         });  // end of faqs button
 
 
         // on click l on Profile button
-    btnProfile.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Intent intent=new Intent(Home.this,StudentDetails.class);
+        btnProfile.setOnClickListener(v -> {
+            Intent intent = new Intent(Home.this, StudentDetails.class);
             startActivity(intent);
-//            finish();
+        }); // end of on click l of profile btn
 
         // on click tprs
-        btnTprs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(Home.this,TPRsContact.class);
-                startActivity(intent);
-            }
+        btnTprs.setOnClickListener(v -> {
+            Intent intent=new Intent(Home.this,TPRsContact.class);
+            startActivity(intent);
         });
-
-        }
-    }); // end of on click l of profile btn
 
     }  // end of on create method
 } // end of class

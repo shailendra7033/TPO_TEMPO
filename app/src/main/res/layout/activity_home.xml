@@ -33,17 +33,18 @@
         android:id="@+id/btn_faqs_home"
         android:layout_width="134dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="196dp"
         android:text="FAQs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btn_tpr_contact"
         android:layout_width="167dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="224dp"
+        android:layout_marginBottom="348dp"
         android:text="Contact TPRs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
